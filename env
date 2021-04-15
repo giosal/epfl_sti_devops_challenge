@@ -1,0 +1,5 @@
+DB_NAME=epfl_sti_devops_challenge
+DB_USER=epfl_sti_devops_challenge_user
+DB_PASS=***replace***
+DB_SERVICE=postgres
+DB_PORT=5432
