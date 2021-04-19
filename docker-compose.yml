@@ -45,7 +45,6 @@ services:
       - web-static:/www/static
     links:
       - web:web
-    env_file: .net_env
     networks:
       public_net:
         ipv4_address: 172.16.0.20
@@ -76,6 +75,7 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data/
+    env_file: .env
     environment:
       POSTGRES_PASSWORD: 'postgres'
 
