@@ -1,11 +1,4 @@
 Django
-<<<<<<< HEAD
 gunicorn
 psycopg2
 redis
-=======
-redis
-django-redis
-gunicorn
-psycopg2
->>>>>>> origin/main
