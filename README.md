@@ -1,20 +1,35 @@
-=======
-## Django Development With Docker Compose and Machine
+EPFL STI DevOps Challenge
+v 0.40
 
-Featuring:
+----------------------------------------------------------------------------
 
-- Docker v18.09.2
-- Docker Compose v1.23.2
-- Docker Machine v0.16.1
-- Python 3.7.3
+As requested per the challenge task, this repository includes 4 main components
+ - Django web container, running Gunicorn server
+ - 2 Nginx reverse proxy contianers
+ - PostgreSQL DB container
+ - HaProxy Load Balancer container
 
-Blog post -> https://realpython.com/blog/python/django-development-with-docker-compose-and-machine/
+1. Prerequisites
+   '''docker'''
+   '''docker-compose'''
+   '''snap'''
+2. Setup
+   In order to run initial setup on Ubuntu, either run
+   '''./setup.sh'''
+   or
+   '''sudo snap install docker'''
 
-### OS X Instructions
+3. Build
+   In order to build the container, run '''docker-compose up -d --build'''
 
-1. Start new machine - `docker-machine create -d virtualbox dev;`
-1. Configure your shell to use the new machine environment - `eval $(docker-machine env dev)`
-1. Build images - `docker-compose build`
-1. Start services - `docker-compose up -d`
-1. Create migrations - `docker-compose run web /usr/local/bin/python manage.py migrate`
-1. Grab IP - `docker-machine ip dev` - and view in your browser
+4. Prepare Django
+   You also need to migrate Django DBs to PostgreSQL DB. For that, run:
+   '''nano epflchallenge/apps/todo/migrations/__init__.py'''
+   then
+   '''docker run -ti epfl_challenge_web_1 bash'''
+   then
+   '''mkdir epflchallenge/apps/todo/migrations'''
+   then
+   '''python manage.py makemigrations'''
+   and finally
+   '''python manage.py migrate'''

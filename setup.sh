@@ -11,9 +11,3 @@ sudo usermod -aG docker $USER
 newgrp docker
 sudo service docker start
 docker run hello-world
-echo \
-"DB_NAME=epfl_sti_devops_challenge \
- DB_USER=epfl_sti_devops_challenge_user \
- DB_PASS=3Boudines63 \
- DB_SERVICE=postgres \
- DB_PORT=5432" > env
