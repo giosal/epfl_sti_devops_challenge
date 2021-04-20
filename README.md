@@ -10,8 +10,8 @@ As requested per the challenge task (found here https://github.com/jaepetto/STI-
  - HaProxy Load Balancer container
 
 1. Prerequisites
-   ```docker```
-   ```docker-compose```
+   ```docker```\n
+   ```docker-compose```\n
    ```snap```
 2. Setup
    In order to run initial setup on Ubuntu, either run
