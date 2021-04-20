@@ -10,32 +10,32 @@ As requested per the challenge task (found here https://github.com/jaepetto/STI-
  - HaProxy Load Balancer container
 
 1. Prerequisites
-   ```docker```\n
-   ```docker-compose```\n
-   ```snap```
+   ```docker```<br/>
+   ```docker-compose```<br/>
+   ```snap```<br/>
 2. Setup
-   In order to run initial setup on Ubuntu, either run
-   ```./setup.sh```
-   or
-   ```sudo snap install docker```
+   In order to run initial setup on Ubuntu, either run<br/>
+   ```./setup.sh```<br/>
+   or<br/>
+   ```sudo snap install docker```<br/>
 
 3. Build
-   In order to build the container, run ```docker-compose up -d --build```
+   In order to build the container, run ```docker-compose up -d --build```<br/>
 
 4. Prepare Django
-   You also need to migrate Django DBs to PostgreSQL DB. For that, run:
-   ```nano epflchallenge/apps/todo/migrations/__init__.py```
-   then
-   ```docker run -ti epfl_challenge_web_1 bash```
-   then
-   ```mkdir epflchallenge/apps/todo/migrations```
-   then
-   ```python manage.py makemigrations```
-   and finally
-   ```python manage.py migrate```
-5. Find the IP
-   ```docker inspect web```
-6. Go to the IP and see the page
+   You also need to migrate Django DBs to PostgreSQL DB. For that, run:<br/>
+   ```nano epflchallenge/apps/todo/migrations/__init__.py```<br/>
+   then (based on previous experience, running migrations outside of container's bash may not complete successfully)<br/>
+   ```docker run -ti epfl_challenge_web_1 bash```<br/>
+   then<br/>
+   ```mkdir epflchallenge/apps/todo/migrations```<br/>
+   then<br/>
+   ```python manage.py makemigrations```<br/>
+   and finally<br/>
+   ```python manage.py migrate```<br/>
+5. Find the IP<br/>
+   ```docker inspect web```<br/>
+6. Go to the IP and see the page<br/>
 
 
 -------------------------------------------------------------------------------
