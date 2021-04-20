@@ -44,3 +44,4 @@ Several important comments:
 2. HaProxy uses a script to open the ports
 3. Failover can be increased by simply adding additional Nginx node in ```docker_compose.yml``` and ```haproxy.cfg```
 4. HaProxy and Nginx can be configured to accept connections over HTTPS, which is important in this day and age.
+5. In order to update containers without downtime, it's enough to run ```docker-compose up -d --build```
