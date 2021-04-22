@@ -59,8 +59,6 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data/
     env_file: .env
-    environment:
-      POSTGRES_PASSWORD: 'postgres'
 
 
   redis:
